@@ -7,12 +7,26 @@ GPU-Accelerated Deep Learning-Based ECG Signal Classification for Cardiac Abnorm
 - **Goal:** Classify ECG beats as normal or abnormal, and compare CPU vs GPU training performance
 - **Environment:** Google Colab (Python, TensorFlow/Keras)
 
+## Links
+
+| What | Link |
+|---|---|
+| Live demo | https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/ |
+| Demo video | <add your YouTube / Google Drive link here> |
+| Report | report_v1.pdf (Word version: report_v1.docx) |
+| Presentation | presentation/Group7_ECG_Presentation.pptx |
+| Full processed data (about 134 MB) | https://drive.google.com/file/d/1TO043QL8KSBiMkkf4Di5MMbLF5wXGgT0/view |
+
 ## Quick start (run the demo)
+
+Easiest: open the live demo link above. No installation is needed. The app asks for ecg_processed_v1.npz: download it from Google Drive (link in the Links table) and upload it in the app.
+
+To run it on your own computer:
 
     pip install -r requirements.txt
     streamlit run demo/app.py
 
-Before running: download ecg_processed_v1.npz from Google Drive (link in the "Processed data" section below) and put it in the project root or in a data/ folder. Full demo guide: demo/README.md
+Before running locally: download ecg_processed_v1.npz from Google Drive (link in the Links table) and put it in the project root or in a data/ folder. Full demo guide: demo/README.md
 
 ## Repository structure
 
@@ -26,7 +40,8 @@ Before running: download ecg_processed_v1.npz from Google Drive (link in the "Pr
     |-- results/                   metrics, timing, settings, hardware CSV/JSON
     |-- graphs/                    all plots
     |-- demo/                      app.py (Streamlit demo) + README (Member 5)
-    |-- report/                    report README / outline
+    |-- report/                    report README/outline, report_v1.docx, report_v1.pdf
+    |-- presentation/              Group7_ECG_Presentation.pptx (10 slides)
 
 ## Team
 
@@ -47,6 +62,9 @@ Before running: download ecg_processed_v1.npz from Google Drive (link in the "Pr
 | 1D-CNN | Member 3 | Done |
 | CNN-LSTM + CPU/GPU | Member 4 | Done |
 | Integration + evaluation + demo | Member 5 | Done |
+| Report | All | Done (report_v1.pdf) |
+| Presentation | Member 4 | Done (presentation/) |
+| Demo video | Member 4 | Add the link in the Links table above |
 
 
 ## Dataset (Member 1)
@@ -234,7 +252,7 @@ Training used only X_train / X_val. The test set was used once, for the final ev
 
 ## Integration, final comparison and demo (Member 5)
 
-**Files:** demo/app.py, demo/README.md, requirements.txt, report/README.md. All numbers below are copied from results/*.csv and results/*.json, nothing is estimated.
+**Files:** demo/app.py, demo/README.md, requirements.txt, report/ (README.md, report_v1.docx, report_v1.pdf), presentation/. All numbers below are copied from results/*.csv and results/*.json, nothing is estimated.
 
 **Demo flow:** input ECG beat -> preprocessing (bandpass 0.5 to 45 Hz + per-segment z-score, same as Member 2) -> 1D-CNN and CNN-LSTM (one sigmoid output each, threshold 0.5) -> predicted class: Normal or Abnormal.
 
@@ -266,7 +284,7 @@ Training used only X_train / X_val. The test set was used once, for the final ev
 - Training time of the two models must not be compared directly: the 1D-CNN run (462.6 s, 7 epochs) had no GPU visible and used early stopping with max 30 epochs, while the CNN-LSTM main run (112.11 s, 13 epochs) used the T4 GPU.
 - Each timing experiment was run once, so small differences should not be over-interpreted.
 
-**Demo:** run `streamlit run demo/app.py`. Step 1 choose a test beat (or upload an ECG file), Step 2 see the preprocessing, Step 3 see both model predictions with P(abnormal), Step 4 see the evaluation tables, which the app reads directly from results/*.csv.
+**Demo:** open the live demo (https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/) or run `streamlit run demo/app.py`. Step 1 choose a test beat (or upload an ECG file), Step 2 see the preprocessing, Step 3 see both model predictions with P(abnormal), Step 4 see the evaluation tables, which the app reads directly from results/*.csv.
 
 ## Folder guide
 
@@ -279,7 +297,8 @@ Training used only X_train / X_val. The test set was used once, for the final ev
 | results/ | Metrics, timing tables, CSV files | All |
 | graphs/ | Plots and charts | All |
 | demo/ | Final demo (app.py) and demo guide | Member 5 |
-| report/ | Project report | All |
+| report/ | Project report (README outline, Word and PDF) | All |
+| presentation/ | Final PowerPoint (10 slides) | All |
 
 ## Member 1 files
 
@@ -311,7 +330,8 @@ Training used only X_train / X_val. The test set was used once, for the final ev
 - demo/app.py - Streamlit demo (input ECG, preprocessing, both models, evaluation tables)
 - demo/README.md - how to run the demo
 - requirements.txt - packages for the demo
-- report/README.md - report outline with the final numbers
+- report/README.md - report outline with the final numbers; report/report_v1.docx and report_v1.pdf - the final report
+- presentation/Group7_ECG_Presentation.pptx - final presentation
 - README.md and the README.md of every folder - kept up to date
 
 ## Rules
@@ -329,4 +349,4 @@ pip install -r requirements.txt
 streamlit run demo/app.py
 ```
 
-Needs `models/` (both .keras files), `results/` and `ecg_processed_v1.npz` (Google Drive link above). Models were saved with Keras 3.13.2, so use TensorFlow 2.20.0 as in requirements.txt. More details and troubleshooting: demo/README.md
+Needs `models/` (both .keras files), `results/` and `ecg_processed_v1.npz` (Google Drive link above). Or just use the live demo link at the top and upload the file in the app. Models were saved with Keras 3.13.2, so use TensorFlow 2.20.0 as in requirements.txt. More details and troubleshooting: demo/README.md
