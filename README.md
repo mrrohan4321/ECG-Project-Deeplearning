@@ -11,6 +11,7 @@ GPU-Accelerated Deep Learning-Based ECG Signal Classification for Cardiac Abnorm
 
 | What | Link |
 |---|---|
+| GitHub repository | https://github.com/mrrohan4321/ECG-Project-Deeplearning |
 | Live demo | https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/ |
 | Demo video | https://youtu.be/or2yRLIMrqw |
 | Report | report_v1.pdf (Word version: report_v1.docx) |
