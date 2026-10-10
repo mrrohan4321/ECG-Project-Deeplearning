@@ -14,8 +14,6 @@
 
 Column notes for cnn_lstm_cpu_gpu_timing_v1.csv: epoch1_s includes warm-up, steady_epoch_avg_s is the average from epoch 2 onward, inference_test_set_s is the time to predict the full test set (15,897 beats).
 
-Add your result files here (metrics, timing tables, confusion matrices).
-
 ## How the numbers are used (Member 5)
 
 - demo/app.py reads 1d_cnn_metrics.csv, cnn_lstm_metrics_v1.csv, cnn_lstm_cpu_gpu_timing_v1.csv and hardware_info_v1.json and shows them in its evaluation step.
