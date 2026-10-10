@@ -23,7 +23,7 @@ Model output is a classification result (Normal / Abnormal), not a clinical diag
 | report_v1.docx | Final report, Word version (editable) |
 | report_v1.pdf | Final report, PDF version |
 
-Live demo: https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/
+Live demo: [https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/](https://ecg-project-deeplearning-6383kyappwquwvbrmgodag6.streamlit.app/)
 
 ## Report structure
 
