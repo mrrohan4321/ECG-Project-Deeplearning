@@ -1,4 +1,4 @@
-ECG Deep Learning Project
+##ECG Deep Learning Project
 
 GPU-Accelerated Deep Learning-Based ECG Signal Classification for Cardiac Abnormality Detection
 
