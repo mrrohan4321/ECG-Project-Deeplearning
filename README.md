@@ -12,7 +12,7 @@ GPU-Accelerated Deep Learning-Based ECG Signal Classification for Cardiac Abnorm
 | What | Link |
 |---|---|
 | Live demo | https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/ |
-| Demo video | [<add your YouTube / Google Drive link here>](https://youtu.be/or2yRLIMrqw) |
+| Demo video | https://youtu.be/or2yRLIMrqw |
 | Report | report_v1.pdf (Word version: report_v1.docx) |
 | Presentation | presentation/Group7_ECG_Presentation.pptx |
 | Full processed data (about 134 MB) | https://drive.google.com/file/d/1TO043QL8KSBiMkkf4Di5MMbLF5wXGgT0/view |
