@@ -285,7 +285,7 @@ Training used only X_train / X_val. The test set was used once, for the final ev
 - Training time of the two models must not be compared directly: the 1D-CNN run (462.6 s, 7 epochs) had no GPU visible and used early stopping with max 30 epochs, while the CNN-LSTM main run (112.11 s, 13 epochs) used the T4 GPU.
 - Each timing experiment was run once, so small differences should not be over-interpreted.
 
-**Demo:** open the live demo (https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/) or run `streamlit run demo/app.py`. Step 1 choose a test beat (or upload an ECG file), Step 2 see the preprocessing, Step 3 see both model predictions with P(abnormal), Step 4 see the evaluation tables, which the app reads directly from results/*.csv.
+**Demo:** open the live demo (https://ecg-project-deeplearning-6383kyappwquwvbrmgodag6.streamlit.app/) or run `streamlit run demo/app.py`. Step 1 choose a test beat (or upload an ECG file), Step 2 see the preprocessing, Step 3 see both model predictions with P(abnormal), Step 4 see the evaluation tables, which the app reads directly from results/*.csv.
 
 ## Folder guide
 
