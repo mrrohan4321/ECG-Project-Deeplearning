@@ -1,10 +1,10 @@
-# Demo (Member 5)
+# Demo
 
 **Live demo:** https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/
 
-**Demo video:** <add your YouTube / Google Drive link here>
+**Demo video:** https://youtu.be/or2yRLIMrqw
 
-Streamlit demo that connects the work of all members:
+Streamlit demo that connects the whole pipeline:
 
     input ECG beat -> preprocessing -> 1D-CNN + CNN-LSTM -> predicted class (Normal / Abnormal)
 
@@ -19,8 +19,8 @@ Note: the free Streamlit app goes to sleep when nobody uses it. If you see "Wake
 ## What the app does
 
 1. **Step 1 - Input:** choose a beat from the test set of ecg_processed_v1.npz (filter: Any / Normal / Abnormal, the true label is shown), or upload your own ECG file (.csv, .txt, .npy) as raw signal or already preprocessed.
-2. **Step 2 - Preprocessing (Member 2):** Butterworth bandpass 0.5 to 45 Hz (order 4, 360 Hz), 360-sample window, per-segment z-score. Demo beats from the .npz are already preprocessed, so this step is skipped for them.
-3. **Step 3 - Prediction (Member 3 and Member 4):** both models give one sigmoid output, P(abnormal). Threshold 0.5: P >= 0.5 is Abnormal, otherwise Normal. The app also says whether the two models agree.
+2. **Step 2 - Preprocessing:** Butterworth bandpass 0.5 to 45 Hz (order 4, 360 Hz), 360-sample window, per-segment z-score. Demo beats from the .npz are already preprocessed, so this step is skipped for them.
+3. **Step 3 - Prediction:** both models give one sigmoid output, P(abnormal). Threshold 0.5: P >= 0.5 is Abnormal, otherwise Normal. The app also says whether the two models agree.
 4. **Step 4 - Evaluation:** metrics, confusion matrix counts, CPU vs GPU table and speedups are read from results/*.csv and results/hardware_info_v1.json. No number is typed into the code. The "best model" line is chosen automatically from the abnormal-class F1 in the CSV files.
 
 ## How to run
