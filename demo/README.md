@@ -1,13 +1,20 @@
 # Demo (Member 5)
 
+**Live demo:** https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/
+
+**Demo video:** <add your YouTube / Google Drive link here>
+
 Streamlit demo that connects the work of all members:
 
     input ECG beat -> preprocessing -> 1D-CNN + CNN-LSTM -> predicted class (Normal / Abnormal)
+
+Note: the free Streamlit app goes to sleep when nobody uses it. If you see "Wake this app up", click the button and wait a few seconds.
 
 | File | Description |
 |---|---|
 | app.py | Streamlit app (run from the project root) |
 | ../requirements.txt | Packages: Streamlit, TensorFlow 2.20.0, Keras 3.13.2, NumPy, pandas, Matplotlib, SciPy |
+| ../data/ecg_processed_v1.npz | Demo data: test beats only (2000 random beats, 1000 Normal and 1000 Abnormal) |
 
 ## What the app does
 
@@ -18,13 +25,16 @@ Streamlit demo that connects the work of all members:
 
 ## How to run
 
+The easiest way is the live demo link above. No installation is needed.
+
+To run it on your own computer:
+
 1. Install (Python 3.10 to 3.13):
 
        pip install -r requirements.txt
 
-2. Download **ecg_processed_v1.npz** (about 134 MB, too big for GitHub) from Google Drive:
+2. The demo data is already included: data/ecg_processed_v1.npz (test beats only, 2000 random beats: 1000 Normal and 1000 Abnormal). No download is needed. The full dataset (train, validation and test, about 134 MB, too big for GitHub) is on Google Drive:
    https://drive.google.com/file/d/1TO043QL8KSBiMkkf4Di5MMbLF5wXGgT0/view
-   Put it in the project root (next to requirements.txt) or in a data/ folder. If the app cannot find it, it shows the link and an upload box.
 3. Run from the project root:
 
        streamlit run demo/app.py
@@ -35,7 +45,7 @@ Streamlit demo that connects the work of all members:
 
 - models/1d_cnn_model.keras and models/cnn_lstm_v1.keras
 - results/ folder (CSV and JSON files)
-- ecg_processed_v1.npz
+- data/ecg_processed_v1.npz
 
 ## Notes and troubleshooting
 
