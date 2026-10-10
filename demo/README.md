@@ -13,8 +13,8 @@ Note: the free Streamlit app goes to sleep when nobody uses it. If you see "Wake
 | File | Description |
 |---|---|
 | app.py | Streamlit app (run from the project root) |
-| ../requirements.txt | Packages: Streamlit, TensorFlow 2.20.0, Keras 3.13.2, NumPy, pandas, Matplotlib, SciPy |
-| ../data/ecg_processed_v1.npz | Demo data: test beats only (2000 random beats, 1000 Normal and 1000 Abnormal) |
+| ../requirements.txt | Packages with versions: Streamlit, TensorFlow 2.20.0, Keras 3.13.2, NumPy, pandas, Matplotlib, SciPy |
+| requirements.txt | Package list in this folder (no versions), kept for the Streamlit deployment |
 
 ## What the app does
 
@@ -25,7 +25,7 @@ Note: the free Streamlit app goes to sleep when nobody uses it. If you see "Wake
 
 ## How to run
 
-The easiest way is the live demo link above. No installation is needed.
+The easiest way is the live demo link above. No installation is needed. The app shows an upload box: download ecg_processed_v1.npz from Google Drive (link in step 2 below) and upload it once.
 
 To run it on your own computer:
 
@@ -33,8 +33,9 @@ To run it on your own computer:
 
        pip install -r requirements.txt
 
-2. The demo data is already included: data/ecg_processed_v1.npz (test beats only, 2000 random beats: 1000 Normal and 1000 Abnormal). No download is needed. The full dataset (train, validation and test, about 134 MB, too big for GitHub) is on Google Drive:
+2. Download **ecg_processed_v1.npz** (about 134 MB, too big for GitHub) from Google Drive:
    https://drive.google.com/file/d/1TO043QL8KSBiMkkf4Di5MMbLF5wXGgT0/view
+   Put it in the project root (next to requirements.txt) or in a data/ folder. If the app cannot find it, it shows the link and an upload box.
 3. Run from the project root:
 
        streamlit run demo/app.py
@@ -45,7 +46,7 @@ To run it on your own computer:
 
 - models/1d_cnn_model.keras and models/cnn_lstm_v1.keras
 - results/ folder (CSV and JSON files)
-- data/ecg_processed_v1.npz
+- ecg_processed_v1.npz
 
 ## Notes and troubleshooting
 
