@@ -11,8 +11,19 @@ Model output is a classification result (Normal / Abnormal), not a clinical diag
 | Item | Status |
 |---|---|
 | Report outline with final numbers (this file) | Done |
-| Report document (report_v1.docx / .pdf) | Done |
-| Presentation (presentation/ folder) | To do |
+| Report document | Done: report_v1.docx and report_v1.pdf (14 pages) |
+| Presentation | Done: ../presentation/Group7_ECG_Presentation.pptx (10 slides) |
+| Demo video | Link is in ../demo/README.md |
+
+## Files in this folder
+
+| File | Description |
+|---|---|
+| README.md | This outline with the final numbers |
+| report_v1.docx | Final report, Word version (editable) |
+| report_v1.pdf | Final report, PDF version |
+
+Live demo: https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/
 
 ## Report structure
 
@@ -35,7 +46,7 @@ Model output is a classification result (Normal / Abnormal), not a clinical diag
 |---|---|
 | Source | MIT-BIH Arrhythmia Database (PhysioNet) |
 | Sampling rate | 360 Hz |
-| Records downloaded / used | 48 / 44 (paced records 102, 104, 107, 217 excluded) |
+| Records downloaded/used | 48 / 44 (paced records 102, 104, 107, 217 excluded) |
 | Lead used | MLII (channel 0) |
 | Total beats | 100,733 |
 | Normal / Abnormal | 90,125 / 10,608 (10.5% abnormal) |
