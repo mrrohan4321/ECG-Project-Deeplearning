@@ -65,7 +65,7 @@ Before running locally: download ecg_processed_v1.npz from Google Drive (link in
 | Integration + evaluation + demo | Member 5 | Done |
 | Report | All | Done (report_v1.pdf) |
 | Presentation | Member 4 | Done (presentation/) |
-| Demo video | Member 4 | [Link]https://youtu.be/or2yRLIMrqw) |
+| Demo video | Member 4 | [Link](https://youtu.be/or2yRLIMrqw) |
 
 
 ## Dataset (Member 1)
