@@ -22,7 +22,7 @@ The app asks for `ecg_processed_v1.npz` once (download link in the [Processed Da
 
 | 🔗 Resource | Link |
 |---|---|
-| 🎬 Demo video | [youtu.be/or2yRLIMrqw](https://youtu.be/or2yRLIMrqw) |
+| 🎬 Demo video | [DEMO YouTube Link](https://youtu.be/or2yRLIMrqw) |
 | 📄 Final report | [PDF version](report/report_v1.pdf) · [Word version](report/report_v1.docx) |
 | 📊 Presentation (10 slides) | [PPT](presentation/Group7_ECG_Presentation.pptx) |
 | 💾 Processed data (~134 MB) | [Google Drive](https://drive.google.com/file/d/1TO043QL8KSBiMkkf4Di5MMbLF5wXGgT0/view) |
