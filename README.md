@@ -60,15 +60,15 @@ The app asks for `ecg_processed_v1.npz` once (download link in the [Processed Da
  
 ```mermaid
 flowchart LR
-    A[MIT-BIH ECG<br/>360 Hz, 44 records] --> B[Bandpass filter<br/>0.5–45 Hz]
-    B --> C[360-sample beat window<br/>centred on R-peak]
-    C --> D[Z-score<br/>normalisation]
+    A["MIT-BIH ECG<br/>360 Hz, 44 records"] --> B["Bandpass filter<br/>0.5–45 Hz"]
+    B --> C["360-sample beat window<br/>centred on R-peak"]
+    C --> D["Z-score<br/>normalisation"]
     D --> E[1D-CNN]
     D --> F[CNN-LSTM]
-    E --> G{P&#40;abnormal&#41; ≥ 0.5?}
+    E --> G{"Abnormal probability ≥ 0.5?"}
     F --> G
-    G -->|yes| H[🔴 Abnormal]
-    G -->|no| I[🟢 Normal]
+    G -->|yes| H["🔴 Abnormal"]
+    G -->|no| I["🟢 Normal"]
 ```
  
 ---
