@@ -17,4 +17,4 @@ Run all notebooks in **Google Colab**. File naming: `name_v1.ipynb`, `name_v2.ip
 It saves models, results and graphs in `/content/Group_7_ECG_Project/` and downloads them as one zip.
 
 ## 🖥️ Demo
-The Streamlit demo is `demo/app.py` (Member 5), not a notebook. The notebooks produce the models and results that the demo loads: `models/*.keras` and `results/*.csv`.
+The Streamlit demo is `demo/app.py` (Members 4 and 5), not a notebook. The notebooks produce the models and results that the demo loads: `models/*.keras` and `results/*.csv`.
