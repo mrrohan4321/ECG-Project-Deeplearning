@@ -1,9 +1,21 @@
-# Presentation
+# 📊 Presentation
 
 | File | Description |
 |---|---|
-| Group7_ECG_Presentation.pptx | Final presentation, 10 slides |
+| `Group7_ECG_Presentation.pptx` | Final presentation, 10 slides |
 
-Slides: 1 title and team, 2 problem and objectives, 3 dataset, 4 preprocessing and split, 5 1D-CNN, 6 CNN-LSTM, 7 CPU vs GPU, 8 model comparison, 9 demo, 10 limitations and conclusion.
+## 🗒️ Slide outline
+1. Title and team
+2. Problem and objectives
+3. Dataset
+4. Preprocessing and split
+5. 1D-CNN
+6. CNN-LSTM
+7. CPU vs GPU
+8. Model comparison
+9. Demo
+10. Limitations and conclusion
 
-All numbers are copied from results/*.csv and results/*.json (same as the report). Live demo: [https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/](https://ecg-project-deeplearning-6383kyappwquwvbrmgodag6.streamlit.app/)
+All numbers are copied from `results/*.csv` and `results/*.json` (same as the report).
+
+🌐 Live demo: [ecg-project-deeplearning.streamlit.app](https://ecg-project-deeplearning-6383kyappwquwvbrmgodag6.streamlit.app/) · 🎬 Demo video: [YouTube](https://youtu.be/or2yRLIMrqw)
