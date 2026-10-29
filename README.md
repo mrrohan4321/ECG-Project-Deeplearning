@@ -52,12 +52,12 @@ The app asks for `ecg_processed_v1.npz` once (download link in the [Processed Da
    - Every number in the evaluation step is read directly from `results/*.csv`, nothing is hardcoded.
 
 6. **Fully Reproducible**
-   - Fixed seed (42), identical settings across models, and the exact hardware / library versions are logged in [`results/hardware_info_v1.json`](results/hardware_info_v1.json).
+   - Fixed seed (42), identical settings across models, and the exact hardware/library versions are logged in [`results/hardware_info_v1.json`](results/hardware_info_v1.json).
 
 ---
-
+ 
 ## 🔄 Pipeline
-
+ 
 ```mermaid
 flowchart LR
     A[MIT-BIH ECG<br/>360 Hz, 44 records] --> B[Bandpass filter<br/>0.5–45 Hz]
@@ -70,7 +70,7 @@ flowchart LR
     G -->|yes| H[🔴 Abnormal]
     G -->|no| I[🟢 Normal]
 ```
-
+ 
 ---
 
 ## 📈 Results at a Glance
