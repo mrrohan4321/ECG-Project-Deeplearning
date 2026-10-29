@@ -18,7 +18,7 @@ Try the demo directly in your browser, no installation needed:
 
 👉 **[ecg-project-deeplearning.streamlit.app](https://ecg-project-deeplearning-6383kyappwquwvbrmgodag6.streamlit.app/)**
 
-The app asks for `ecg_processed_v1.npz` once (download link in the [Processed Data](#-processed-data) section). The free Streamlit app sleeps when unused, so if you see *"Wake this app up"*, click the button and wait a few seconds.
+The app opens with a **built-in sample of 400 real test beats**, so you can try it right away with no upload. To use the full test set instead, you can optionally upload `ecg_processed_v1.npz` (link in the [Processed Data](#-processed-data) section). The free Streamlit app sleeps when unused, so if you see *"Wake this app up"*, click the button and wait a few seconds.
 
 | 🔗 Resource | Link |
 |---|---|
@@ -48,7 +48,7 @@ The app asks for `ecg_processed_v1.npz` once (download link in the [Processed Da
    - Up to **9.75× faster** training and **7.43× faster** inference on GPU.
 
 5. **Interactive 4-Step Streamlit Demo**
-   - Pick a test beat or upload your own ECG (`.csv`, `.txt`, `.npy`) → see preprocessing → get both model predictions with P(abnormal) → view evaluation tables.
+   - Pick a test beat (a built-in sample loads automatically, no upload needed) or upload your own ECG (`.csv`, `.txt`, `.npy`) → see preprocessing → get both model predictions with P(abnormal) → view evaluation tables.
    - Every number in the evaluation step is read directly from `results/*.csv`, nothing is hardcoded.
 
 6. **Fully Reproducible**
@@ -132,6 +132,7 @@ ECG-Project-Deeplearning/
 ├── graphs/                          # All plots and figures
 ├── demo/
 │   ├── app.py                       # Streamlit demo
+│   ├── sample_beats.npz             # 400 real test beats for the one-click demo
 │   ├── demo_video.mp4
 │   ├── requirements.txt
 │   └── README.md
@@ -157,13 +158,13 @@ pip install -r requirements.txt
 ```
 Models were saved with Keras 3.13.2, so keep **TensorFlow 2.20.0** as pinned. TensorFlow 2.15 uses Keras 2 and may fail to load the `.keras` files.
 
-### 3. Download the Processed Data
-The file is ~134 MB, too large for GitHub, so it lives on Google Drive:
+### 3. (Optional) Download the Full Processed Data
+The demo already includes a 400-beat sample (`demo/sample_beats.npz`), so you can **skip this step** and go straight to step 4. To use the full test set (15,897 beats), download the ~134 MB file from Google Drive (too large for GitHub):
 ```bash
 pip install gdown
 gdown 1TO043QL8KSBiMkkf4Di5MMbLF5wXGgT0 -O ecg_processed_v1.npz
 ```
-Keep it in the project root (next to `requirements.txt`) or in a `data/` folder.
+Keep it in the project root (next to `requirements.txt`) or in a `data/` folder. The app uses it automatically when it is found.
 
 ### 4. Launch the Demo
 ```bash
@@ -285,8 +286,10 @@ The CPU run uses `tf.device('/CPU:0')` inside the same Colab GPU runtime with id
 | 1 | Dataset + ECG Analysis | Ronit Jana | 24/CSE/145 |
 | 2 | Data Preprocessing | Ritam Jana | 24/CSE/138 |
 | 3 | 1D-CNN Model | Rishi Raj | 24/CSE/137 |
-| 4 | CNN-LSTM + GPU Performance, Report, Presentation, Demo Video | Rohan Adak | 24/CSE/143 |
+| 4 | CNN-LSTM + GPU Performance, Demo App, Report, Presentation, Demo Video | Rohan Adak | 24/CSE/143 |
 | 5 | Integration + Evaluation + Demo App | Rishabh Jha | 24/CSE/136 |
+
+The Streamlit demo app was built jointly by Member 4 and Member 5.
 
 ### ✅ Status
 
