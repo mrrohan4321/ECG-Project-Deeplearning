@@ -32,6 +32,7 @@ BASE = _find_root(HERE)
 MODEL_DIR = os.path.join(BASE, "models")
 RESULT_DIR = os.path.join(BASE, "results")
 DATA_NAME = "ecg_processed_v1.npz"
+SAMPLE_PATH = os.path.join(HERE, "sample_beats.npz")   # small built-in demo sample (in the repo)
 DRIVE_LINK = "https://drive.google.com/file/d/1TO043QL8KSBiMkkf4Di5MMbLF5wXGgT0/view"
 DATA_CANDIDATES = [os.path.join(b, p, DATA_NAME) for b in dict.fromkeys([BASE, HERE, os.getcwd()])
                    for p in ("", "data", "dataset", "demo")]
@@ -138,6 +139,9 @@ signal, already_processed, true_label = None, True, None
 
 if mode.startswith("Demo"):
     local = next((p for p in DATA_CANDIDATES if os.path.exists(p)), None)
+    using_sample = False
+    if local is None and os.path.exists(SAMPLE_PATH):      # no full file -> use the built-in sample
+        local, using_sample = SAMPLE_PATH, True
     uploaded_npz = None
     if local is None:
         st.info(
@@ -146,10 +150,17 @@ if mode.startswith("Demo"):
             "(or in data/) and refresh, or upload it below."
         )
         uploaded_npz = st.file_uploader(DATA_NAME, type=["npz"])
+    elif using_sample:
+        with st.expander("Optional: use the full test set instead of the built-in sample"):
+            st.markdown(f"Download `{DATA_NAME}` (~134 MB) from [Google Drive]({DRIVE_LINK}) and upload it here.")
+            uploaded_npz = st.file_uploader(DATA_NAME, type=["npz"], key="full_npz")
     src = uploaded_npz if uploaded_npz is not None else local
     if src is not None:
         d = np.load(src)
         X_test, y_test = d["X_test"], d["y_test"]          # only the test split is read
+        if using_sample and uploaded_npz is None:
+            st.caption(f"Using the built-in sample: {len(y_test)} real beats from the test set "
+                       "(same preprocessing as the full data; the sample is balanced between Normal and Abnormal).")
         which = st.radio("Beat type", ["Any", "Normal", "Abnormal"], horizontal=True)
         pool = np.arange(len(y_test)) if which == "Any" else np.where(y_test == (which == "Abnormal"))[0]
         pos = st.slider("Test beat number", 0, len(pool) - 1, 0)
