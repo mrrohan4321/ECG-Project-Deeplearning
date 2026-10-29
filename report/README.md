@@ -36,7 +36,7 @@ Live demo: [ecg-project-deeplearning.streamlit.app](https://ecg-project-deeplear
 | 5 | CNN-LSTM | Architecture, settings, training curves, test metrics | notebooks/04_..., results/cnn_lstm_*.csv, graphs/cnn_lstm_*.png | Member 4 |
 | 6 | CPU vs GPU | Experiment design, hardware, timing, speedup | results/cnn_lstm_cpu_gpu_timing_v1.csv, hardware_info_v1.json, graphs/cnn_lstm_cpu_vs_gpu_v1.png | Member 4 |
 | 7 | Model comparison and discussion | 1D-CNN vs CNN-LSTM, weaknesses, limitations | graphs/final_model_comparison.png | Member 5 |
-| 8 | Demo | Input ECG -> preprocessing -> models -> Normal / Abnormal | demo/README.md, demo/app.py | Member 5 |
+| 8 | Demo | Input ECG -> preprocessing -> models -> Normal / Abnormal | demo/README.md, demo/app.py | Member 4 and 5 |
 | 9 | Conclusion and future work | Short summary based only on measured values | - | All |
 | 10 | References | PhysioNet / MIT-BIH, WFDB, TensorFlow/Keras | - | All |
 
