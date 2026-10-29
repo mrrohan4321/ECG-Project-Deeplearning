@@ -1,4 +1,40 @@
 # Large processed data file (hosted on Google Drive, see README)
 *.npz
+data/
+
+# Raw MIT-BIH records (download with wfdb, see README)
+mitdb/
+*.dat
+*.hea
+*.atr
+
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+.Python
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Streamlit secrets (never commit)
+.streamlit/secrets.toml
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+temp*
+*.tmp
