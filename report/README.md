@@ -1,4 +1,4 @@
-# Report (Group 7 - ECG Deep Learning Project)
+# 📄 Report · Group 7 ECG Deep Learning Project
 
 **Title:** GPU-Accelerated Deep Learning-Based ECG Signal Classification for Cardiac Abnormality Detection
 
@@ -6,16 +6,16 @@ This folder holds the final project report. This README is the report outline: w
 
 Model output is a classification result (Normal / Abnormal), not a clinical diagnosis.
 
-## Status
+## ✅ Status
 
 | Item | Status |
 |---|---|
 | Report outline with final numbers (this file) | Done |
-| Report document | Done: report_v1.docx and report_v1.pdf (14 pages) |
+| Report document | Done: [report_v1.pdf](report_v1.pdf) (14 pages) and [report_v1.docx](report_v1.docx) |
 | Presentation | Done: ../presentation/Group7_ECG_Presentation.pptx (10 slides) |
-| Demo video | Link is in ../demo/README.md |
+| Demo video | Done: [YouTube](https://youtu.be/or2yRLIMrqw) (also in ../demo/README.md) |
 
-## Files in this folder
+## 📁 Files in this folder
 
 | File | Description |
 |---|---|
@@ -23,9 +23,9 @@ Model output is a classification result (Normal / Abnormal), not a clinical diag
 | report_v1.docx | Final report, Word version (editable) |
 | report_v1.pdf | Final report, PDF version |
 
-Live demo: [https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.app/](https://ecg-project-deeplearning-6383kyappwquwvbrmgodag6.streamlit.app/)
+Live demo: [ecg-project-deeplearning.streamlit.app](https://ecg-project-deeplearning-6383kyappwquwvbrmgodag6.streamlit.app/) · 🎬 Demo video: [YouTube](https://youtu.be/or2yRLIMrqw)
 
-## Report structure
+## 🧱 Report structure
 
 | # | Section | What to write | Source files | Main member |
 |---|---|---|---|---|
@@ -40,7 +40,7 @@ Live demo: [https://ecg-project-deeplearning-7bawjywtz5d2jpancnhnkz.streamlit.ap
 | 9 | Conclusion and future work | Short summary based only on measured values | - | All |
 | 10 | References | PhysioNet / MIT-BIH, WFDB, TensorFlow/Keras | - | All |
 
-## 2. Dataset - key facts
+## 🗂️ Dataset · key facts
 
 | Item | Value |
 |---|---|
@@ -55,7 +55,7 @@ Labels: **Normal (0)** = N, L, R, e, j. **Abnormal (1)** = A, a, J, S, V, E, F, 
 
 Point to explain: L and R (bundle branch block) beats are labelled Normal by the team's definition.
 
-## 3. Preprocessing - key facts
+## ⚙️ Preprocessing · key facts
 
 - Bandpass filter: Butterworth, 0.5 to 45 Hz, order 4 (applied to the whole record first)
 - Segment: 360 samples centred on each R peak (180 before, 180 after)
@@ -69,7 +69,7 @@ Point to explain: L and R (bundle branch block) beats are labelled Normal by the
 | Validation | 7 | 16,399 | 14,553 | 1,846 | 11.3% |
 | Test | 7 | 15,897 | 12,733 | 3,164 | 19.9% |
 
-## 4 and 5. Models
+## 🧠 Models
 
 **1D-CNN:** ECG (360 x 1) -> Conv1D(32, k=5) + MaxPool -> Conv1D(64, k=5) + MaxPool -> Flatten -> Dense(64) -> Dropout(0.5) -> Sigmoid. 379,265 parameters.
 
@@ -90,7 +90,7 @@ Point to explain: L and R (bundle branch block) beats are labelled Normal by the
 
 Note: max epochs, patience and ReduceLROnPlateau differ between the two models. Say this in the report.
 
-## 7. Final model comparison (test set, 15,897 beats from 7 unseen records)
+## 🏁 Final model comparison (test set, 15,897 beats from 7 unseen records)
 
 | Metric | 1D-CNN | CNN-LSTM |
 |---|---|---|
@@ -105,7 +105,7 @@ Note: max epochs, patience and ReduceLROnPlateau differ between the two models. 
 
 **Do not compare the two training times directly.** The runs used different hardware, different epoch limits and different early stopping.
 
-## 6. CPU vs GPU (CNN-LSTM, same model, data, seed, batch size, 5 epochs, no early stopping)
+## ⚡ CPU vs GPU (CNN-LSTM, same model, data, seed, batch size, 5 epochs, no early stopping)
 
 | Metric | CPU | GPU | Speedup (CPU / GPU) |
 |---|---|---|---|
@@ -120,7 +120,7 @@ Note: max epochs, patience and ReduceLROnPlateau differ between the two models. 
 
 The CPU run uses `tf.device('/CPU:0')` inside the same Colab GPU runtime. Epoch time includes validation time. Each timing experiment was run once (TIMING_REPEATS = 1).
 
-## Discussion points (based only on the measured values)
+## 💬 Discussion points (based only on the measured values)
 
 - The 1D-CNN is better than the CNN-LSTM on every metric in the comparison table. The extra LSTM layer did not help on this dataset.
 - Both models are weak on the abnormal class (F1 about 0.45 to 0.52).
@@ -130,7 +130,7 @@ The CPU run uses `tf.device('/CPU:0')` inside the same Colab GPU runtime. Epoch 
 - GPU gives about 7.4x to 9.8x speedup for the CNN-LSTM, depending on what is measured (inference, total training, steady epoch).
 - Single runs only (no repeats), so small differences between models or devices should not be over-interpreted.
 
-## Figures to include
+## 🖼️ Figures to include
 
 | Figure | File |
 |---|---|
@@ -144,7 +144,7 @@ The CPU run uses `tf.device('/CPU:0')` inside the same Colab GPU runtime. Epoch 
 | CPU vs GPU timing | graphs/cnn_lstm_cpu_vs_gpu_v1.png |
 | Final model comparison | graphs/final_model_comparison.png |
 
-## Rules for the report
+## 📏 Rules for the report
 
 - Every number must come from a real experiment (results/*.csv, results/*.json).
 - Describe the output as a prediction/classification result, not a clinical diagnosis.
